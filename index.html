@@ -29,8 +29,9 @@
 <script>
   let domain =document.domain;
   let idx=domain.substring(0,domain.indexOf('.'));
-  console.log(domain) // --angel的博客_CSDN博客-领域博主
-  console.log(idx) // --angel的博客_CSDN博客-领域博主
+  if(idx=="www"){
+    idx="portal";
+  }
   document.getElementById('iframe1').src = "https://"+idx+".ifr.ensemblecellatlas.org:61011/";
   let titleJson={
     "blood":"Human Blood Dataset",
