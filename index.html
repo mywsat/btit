@@ -6,7 +6,7 @@
 	<meta name="viewport" content="user-scalable=yes"> -->
   <link rel="icon" type="image/x-icon" href="./btit.ico" />
   <meta name="keywords" content=""><meta name="description" content=""><meta charset="utf-8"><meta name="renderer" content="webkit">
-  <title>UHAF</title>
+  <title></title>
   <style>
     html,body{
       padding: 0;
@@ -24,6 +24,25 @@
   </style>
 </head>
 <body>
-  <iframe class="ui-iframe" src="https://rcs.mywsat.cn/test2.html" frameborder="0"></iframe>
+  <iframe id="iframe1" class="ui-iframe" src="" frameborder="0"></iframe>
 </body>
+<script>
+  let domain =document.domain;
+  let idx=domain.substring(0,domain.indexOf('.'));
+  console.log(domain) // --angel的博客_CSDN博客-领域博主
+  console.log(idx) // --angel的博客_CSDN博客-领域博主
+  document.getElementById('iframe1').src = "https://"+idx+".ifr.ensemblecellatlas.org:61011/";
+  let titleJson={
+    "blood":"Human Blood Dataset",
+    "heart":"uniHEART",
+    "data":"Data Download",
+    "brain":"Human Brain Dataset",
+    "intestine":"Human Intestine Dataset",
+    "liver":"Liver Heart Dataset",
+    "lung":"Human Lung Dataset",
+    "portal":"Human Ensemble Cell Atlas",
+    "uhaf":"uhaf"
+  }
+  document.title = titleJson[idx];
+</script>
 </html>
