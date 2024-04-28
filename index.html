@@ -27,12 +27,15 @@
   <iframe id="iframe1" class="ui-iframe" src="" frameborder="0"></iframe>
 </body>
 <script>
-  let domain =document.domain;
-  let idx=domain.substring(0,domain.indexOf('.'));
+  let domain =document.URL;
+  //domain = 'https://lung.unifiedcellatlas.org/download/total_gene_list_43878.xlsx'
+  let match = domain.match("//(.*).unifiedcellatlas.org/(.*)")
+  idx = match[1]
   if(idx=="www"){
     idx="portal";
   }
-  document.getElementById('iframe1').src = "https://"+idx+".ifr.unifiedcellatlas.org:61011/";
+
+  document.getElementById('iframe1').src = "https://"+idx+".ifr.unifiedcellatlas.org:61011/"+(match[2]? match[2]:'');
   let titleJson={
     "blood":"uniBLOOD",
     "heart":"uniHEART",
@@ -42,7 +45,8 @@
     "liver":"uniLIVER",
     "lung":"uniLUNG",
     "portal":"Human Ensemble Cell Atlas",
-    "uhaf":"uhaf"
+    "uhaf":"uhaf",
+    "eye":"uniEYE",
   }
   document.title = titleJson[idx];
 </script>
